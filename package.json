@@ -1,0 +1,18 @@
+{
+  "name": "{{ name }}",
+  "version": "0.0.001",
+  "description": "",
+  "main": "bin/www",
+  "author": "haoran.shu",
+  "license": "MIT",
+  "private": true,{{set last = dependencies.length - 1}}
+  "dependencies": {
+    {{each dependencies}}
+    "{{ $value.name }}": "^{{ $value.version }}"{{if $index === last}},{{/if}}
+    {{/each}}
+  }{{if test}},{{/if}}{{if test}}
+  "devDependencies": {
+    "mocha": "^{{ test.mocha }}",
+    "supertest": "^{{ test.supertest }}"
+  }{{/if}}
+}
