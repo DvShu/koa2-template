@@ -10,9 +10,10 @@
     {{each dependencies}}
     "{{ $value.name }}": "^{{ $value.version }}"{{if $index === last}},{{/if}}
     {{/each}}
-  }{{if test}},{{/if}}{{if test}}
+  }{{if (test === 'y')}},{{/if}}{{if (test === 'y')}}{{set last = dependencies.length - 1}}
   "devDependencies": {
-    "mocha": "^{{ test.mocha }}",
-    "supertest": "^{{ test.supertest }}"
+    {{each testDependencies}}
+    "{{ $value.name }}": "^{{ $value.version }}"{{if $index === last}},{{/if}}
+    {{/each}}
   }{{/if}}
 }

@@ -1,7 +1,0 @@
-*.log
-node_modules/
-.idea/
-yarn.lock
-config.js
-package-lock.json
-
