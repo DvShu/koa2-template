@@ -6,7 +6,7 @@ const serve = require('koa-static-cache');
 const log = require('koa-log4js-base');
 log.configure('{{ name }}');
 const bodyParser = require('koa-bodyparser');
-{{#if (session === 'y')}}
+{{if (session === 'y')}}
 const session = require('koa-session');
 {{/if }}
 {{if (template === 'y')}}
