@@ -8,7 +8,7 @@
   "private": true,{{set last = dependencies.length - 1}}
   "dependencies": { {{each dependencies}}
     "{{ $value.name }}": "^{{ $value.version }}"{{if $index !== last}},{{/if}}{{/each}}
-  }{{if (test === 'y')}},{{/if}}{{if (test === 'y')}}{{set last = dependencies.length - 1}}
+  }{{if (test === 'y')}},{{/if}}{{if (test === 'y')}}{{set last = testDependencies.length - 1}}
   "devDependencies": { {{each testDependencies}}
     "{{ $value.name }}": "^{{ $value.version }}"{{if $index !== last}},{{/if}}{{/each}}
   }{{/if}}

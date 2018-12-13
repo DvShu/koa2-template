@@ -1,6 +1,5 @@
 "use strict";
 const app = new (require('koa'))();
-const logger = require('log4js').getLogger('app');
 const Router = require('koa-router');
 const serve = require('koa-static-cache');
 const logAdapter = new (require('koa-log4js-base'))('{{ name }}');
