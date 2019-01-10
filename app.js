@@ -24,7 +24,7 @@ app.use(session({
 }, app)); // 配置 session
 {{/if}}
 app.use(logAdapter.adapt()); // 日志记录
-app.use(serve('./public',{gzip:true})); // 静态资源
+app.use(serve('./public',{gzip:true,prefix:'/{{ name }}/'})); // 静态资源
 app.use(bodyParser()); // post 请求参数
 
 // 路由
